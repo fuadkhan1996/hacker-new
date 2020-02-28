@@ -8339,6 +8339,11 @@ react-overlays@^2.1.0:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
+react-pluralize@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/react-pluralize/-/react-pluralize-1.6.3.tgz#8d7dba3c584001f8c540717d6ba1601fa264a561"
+  integrity sha512-TOpCsnMNTpMgEJFsxdwsHHxvChvrWKENsYkK9At5B+0CZTEc40CAMqvXKnz8C3VDt0LBL8491kEnL61IH3CUHA==
+
 react-scripts@3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-3.4.0.tgz#f413680f0b5b937c8879ba1ffdae9b8c5b364bf5"
