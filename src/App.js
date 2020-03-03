@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import News from './components/ContainerComponents/News';
+import HackerNews from './components/HackerNews';
 
 const App = () => {
   return (
     <div>
-      <News />
+      <HackerNews/>
     </div>
   );
 }
