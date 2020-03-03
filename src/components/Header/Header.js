@@ -14,39 +14,39 @@ const Header = (props) => {
 
         <span className="navbar-brand">
           <Button
-            className={ `${ props.pressedBtnText === "News" ? 'text-white font-weight-bold' : 'text-dark' }` }
+            className={ `${ props.pressedBtnText === "News" ? 'text-white font-weight-bold text-decoration-none' : 'text-dark' }` }
             variant="link"
             onClick={ () => props.handleClick("https://api.hnpwa.com/v0/news/1.json", "News") }>
-            News
+            { props.pressedBtnText === "News" ? <u>News</u> : 'News' }
           </Button>
 
           <Button
             className={ `ml-2 ${ props.pressedBtnText === "Newest" ? 'text-white font-weight-bold' : 'text-dark' }` }
             variant="link"
             onClick={() => props.handleClick("https://api.hnpwa.com/v0/newest/1.json", "Newest") }>
-            Newest
+            { props.pressedBtnText === "Newest" ? <u>Newest</u> : 'Newest' }
           </Button>
 
           <Button
             className={ `ml-2 ${ props.pressedBtnText === "Ask" ? 'text-white font-weight-bold' : 'text-dark' }` }
             variant="link"
             onClick={() => props.handleClick("https://api.hnpwa.com/v0/ask/1.json", "Ask") }>
-            Ask
+            { props.pressedBtnText === "Ask" ? <u>Ask</u> : 'Ask' }
           </Button>
 
           <Button
             className={ `ml-2 ${ props.pressedBtnText === "Show" ? 'text-white font-weight-bold' : 'text-dark' }` }
             variant="link"
             onClick={() => props.handleClick("https://api.hnpwa.com/v0/show/1.json", "Show") }>
-            Show
+            { props.pressedBtnText === "Show" ? <u>Show</u> : 'Show' }
           </Button>
 
           <Button
             className={ `ml-2 ${ props.pressedBtnText === "Jobs" ? 'text-white font-weight-bold' : 'text-dark' }` }
             variant="link"
             onClick={() => props.handleClick("https://api.hnpwa.com/v0/jobs/1.json", "Jobs") }>
-            Jobs
-          </Button>
+            { props.pressedBtnText === "Jobs" ? <u>Jobs</u> : 'Jobs' }
+            </Button>
         </span>
       </Container>
     </nav>
