@@ -11,7 +11,9 @@ const DisplayRecords = ({ data }) => {
             { data.map(newsFeed => (
               <li key={ newsFeed.id }>
                 <Card text="black" className=" border-0 bg-light">
-                  <p className="font-weight-bold  p-1">{ newsFeed.title }
+                  <p className="font-weight-bold  p-1">
+                    <a className="text-dark" href={newsFeed.url ? newsFeed.url : '#'}>{ newsFeed.title }</a>
+
                     <small className="text-muted">
                       { newsFeed.domain && `(${ newsFeed.domain })` }
                     </small>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pagination as  ReactBootstrapPagination  } from 'react-bootstrap'
+import './Pagination.css'
 
 const Pagination = ({newsPerPage, totalNews, currentPage, paginate}) => {
   const pageNumbers = [];
