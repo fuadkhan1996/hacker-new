@@ -6,7 +6,7 @@ import DisplayRecords from '../DisplayRecords'
 import { useLocation } from 'react-router-dom'
 
 const News = () => {
-  let { pathname } = useLocation();
+  const { pathname } = useLocation();
   const [news, setNews] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [newsPerPage, setNewsPerPage] = useState(10)
