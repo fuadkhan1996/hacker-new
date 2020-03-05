@@ -1,55 +1,63 @@
 import React from 'react'
-import { Container, Button} from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import header_logo from '../../header-logo.png'
 import './Header.css'
+import { NavLink, useLocation } from 'react-router-dom'
 
-const Header = (props) => {
+const Header = () => {
+  const { pathname } = useLocation();
+
   return (
-    <nav className="navbar fixed-top bg-warning">
-      <Container>
-        <span className="navbar-brand">
-          <img src={ header_logo } alt="logo" className="header-logo" />
-          <span className="font-weight-bold align-middle ml-2"> Hacker News Feeds</span>
-        </span>
+    <div className="nav-box">
+      <nav className="navbar fixed-top bg-warning">
+        <Container>
+          <span className="navbar-brand">
+            <img src={ header_logo } alt="logo" className="header-logo" />
 
-        <span className="navbar-brand">
-          <Button
-            className={ `${ props.pressedBtnText === "News" ? 'text-white font-weight-bold text-decoration-none' : 'text-dark' }` }
-            variant="link"
-            onClick={ () => props.handleClick("https://api.hnpwa.com/v0/news/1.json", "News") }>
-            { props.pressedBtnText === "News" ? <u>News</u> : 'News' }
-          </Button>
+            <NavLink
+              to="/"
+              className="font-weight-bold align-middle ml-2 text-dark text-decoration-none"> Hacker News Feeds
+            </NavLink>
+          </span>
 
-          <Button
-            className={ `ml-2 ${ props.pressedBtnText === "Newest" ? 'text-white font-weight-bold' : 'text-dark' }` }
-            variant="link"
-            onClick={() => props.handleClick("https://api.hnpwa.com/v0/newest/1.json", "Newest") }>
-            { props.pressedBtnText === "Newest" ? <u>Newest</u> : 'Newest' }
-          </Button>
+          <span className="navbar-brand">
+            <NavLink
+              to="/news"
+              className={ `header-btn ${ (pathname === "/news" || pathname === "/") ? 'text-white font-weight-bold underline' : 'text-dark' }` }>
+              News
+            </NavLink>
 
-          <Button
-            className={ `ml-2 ${ props.pressedBtnText === "Ask" ? 'text-white font-weight-bold' : 'text-dark' }` }
-            variant="link"
-            onClick={() => props.handleClick("https://api.hnpwa.com/v0/ask/1.json", "Ask") }>
-            { props.pressedBtnText === "Ask" ? <u>Ask</u> : 'Ask' }
-          </Button>
+            <NavLink
+              to="/newest"
+              activeClassName="font-weight-bold underline"
+              className={ `header-btn ml-4 ${ pathname === "/newest" ? 'text-white' : 'text-dark' }` }>
+              Newest
+            </NavLink>
 
-          <Button
-            className={ `ml-2 ${ props.pressedBtnText === "Show" ? 'text-white font-weight-bold' : 'text-dark' }` }
-            variant="link"
-            onClick={() => props.handleClick("https://api.hnpwa.com/v0/show/1.json", "Show") }>
-            { props.pressedBtnText === "Show" ? <u>Show</u> : 'Show' }
-          </Button>
+            <NavLink
+              to="/ask"
+              activeClassName="font-weight-bold underline"
+              className={ `header-btn ml-4 ${ pathname === "/ask" ? 'text-white' : 'text-dark' }` }>
+              Ask
+            </NavLink>
 
-          <Button
-            className={ `ml-2 ${ props.pressedBtnText === "Jobs" ? 'text-white font-weight-bold' : 'text-dark' }` }
-            variant="link"
-            onClick={() => props.handleClick("https://api.hnpwa.com/v0/jobs/1.json", "Jobs") }>
-            { props.pressedBtnText === "Jobs" ? <u>Jobs</u> : 'Jobs' }
-            </Button>
-        </span>
-      </Container>
-    </nav>
+            <NavLink
+              to="/show"
+              activeClassName="font-weight-bold underline"
+              className={ `header-btn ml-4 ${ pathname === "/show" ? 'text-white' : 'text-dark' }` }>
+              Show
+            </NavLink>
+
+            <NavLink
+              to="/jobs"
+              activeClassName="font-weight-bold underline"
+              className={ `header-btn ml-4 ${ pathname === "/jobs" ? 'text-white' : 'text-dark' }` }>
+              Jobs
+            </NavLink>
+          </span>
+        </Container>
+      </nav>
+    </div>
   )
 }
 
